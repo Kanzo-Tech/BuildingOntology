@@ -1,0 +1,273 @@
+@prefix : <https://kanzo.tech/ECiCo/BuildingOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://kanzo.tech/ECiCo/BuildingOntology#> .
+
+<https://kanzo.tech/ECiCo/BuildingOntology#> rdf:type owl:Ontology ;
+                                              owl:versionIRI <https://kanzo.tech/ECiCo/BuildingOntology/0.1> ;
+                                              owl:imports <https://w3id.org/digitalconstruction/0.5/Energy> ,
+                                                          <https://w3id.org/digitalconstruction/0.5/Information> ,
+                                                          <https://w3id.org/digitalconstruction/0.5/Lifecycle> ,
+                                                          <https://w3id.org/digitalconstruction/0.5/Materials> ,
+                                                          <https://w3id.org/digitalconstruction/0.5/Occupancy> ,
+                                                          <https://w3id.org/digitalconstruction/0.5/Processes> ,
+                                                          <https://w3id.org/digitalconstruction/0.5/Variables> ;
+                                              rdfs:comment "An ontology about building assets" ;
+                                              rdfs:label "An ontology for the digitalization of the building sector, ease of reuse, traceability, and recycling of materials." .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#establishesFile
+:establishesFile rdf:type owl:ObjectProperty ;
+                 rdfs:domain <https://w3id.org/digitalconstruction/0.5/Entities#Entity> ;
+                 rdfs:range <https://w3id.org/digitalconstruction/0.5/Information#File> ;
+                 rdfs:comment "An entity can establish a certain file (e.g. a contract)"@en ;
+                 rdfs:label "establishes a file"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#foundIn
+:foundIn rdf:type owl:ObjectProperty ;
+         rdfs:domain <https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject> ;
+         rdfs:range <https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage> ;
+         rdfs:comment "A building object that is found in certaing lifecycle stage"@en ;
+         rdfs:label "found in"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage
+:hasBuildingStage rdf:type owl:ObjectProperty ;
+                  rdfs:domain <https://w3id.org/digitalconstruction/0.5/Entities#Building> ;
+                  rdfs:range :BuildingStage ;
+                  rdfs:comment "A building goes through an amount of stages during its lifecycle"@en ;
+                  rdfs:label "has building stage"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#hasFile
+:hasFile rdf:type owl:ObjectProperty ;
+         rdfs:domain <https://w3id.org/digitalconstruction/0.5/Entities#Entity> ;
+         rdfs:range <https://w3id.org/digitalconstruction/0.5/Information#File> ;
+         rdfs:comment "Entity has specific file (once it has been established)"@en ;
+         rdfs:label "has file"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact
+:hasLifecycleImpact rdf:type owl:ObjectProperty ;
+                    rdfs:domain :BuildingStage ;
+                    rdfs:range <https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact> ;
+                    rdfs:comment "Has lifecycle impact associated"@en ;
+                    rdfs:label "has lifecycle impact"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#hasSensor
+:hasSensor rdf:type owl:ObjectProperty ;
+           rdfs:domain :System ;
+           rdfs:range <https://w3id.org/digitalconstruction/0.5/Entities#Sensor> ;
+           rdfs:comment "Has some sensor associated"@en ;
+           rdfs:label "has sensor"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem
+:linkedToSystem rdf:type owl:ObjectProperty ;
+                rdfs:domain :System ;
+                rdfs:range :Contract ;
+                rdfs:comment "File linked to specific system" ;
+                rdfs:label "linked to system"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit
+:occupiesBuildingUnit rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Department ;
+                      rdfs:range <https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit> ;
+                      rdfs:comment "Department occupies a certain building unit"@en ;
+                      rdfs:label "occupies building unit"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#presentInModel
+:presentInModel rdf:type owl:ObjectProperty ;
+                rdfs:domain :System ;
+                rdfs:range <https://w3id.org/digitalconstruction/0.5/Information#InformationModel> ;
+                rdfs:comment "System is present in a model"@en ;
+                rdfs:label "present in model"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy
+:producesEnergy rdf:type owl:ObjectProperty ;
+                rdfs:domain :EnergySource ;
+                rdfs:range <https://w3id.org/digitalconstruction/0.5/Energy#EnergyData> ;
+                rdfs:comment "Produces energy data"@en ;
+                rdfs:label "produces energy"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#producesWaste
+:producesWaste rdf:type owl:ObjectProperty ;
+               rdfs:domain <https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage> ;
+               rdfs:range :Waste ;
+               rdfs:comment "An activity produces waste"@en ;
+               rdfs:label "produces waste"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment
+:requiresTreatment rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Waste ;
+                   rdfs:range :Treatment ;
+                   rdfs:comment "A waste requires a specific treatment"@en ;
+                   rdfs:label "requires treatment"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy
+:suppliesEnergy rdf:type owl:ObjectProperty ;
+                rdfs:domain :EnergySource ;
+                rdfs:range <https://w3id.org/digitalconstruction/0.5/Entities#Building> ;
+                rdfs:comment "Produces and supplies energy to certain building"@en ;
+                rdfs:label "supplies energy"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage
+:BuildingStage rdf:type owl:Class ;
+               rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Entities#Building> ;
+               rdfs:comment "Stage at which a certain building is during the construction lifecycle"@en ;
+               rdfs:label "Building stage"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#Contract
+:Contract rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Information#File> ;
+          rdfs:comment "A contract"@en ;
+          rdfs:label "Contract"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#Department
+:Department rdf:type owl:Class ;
+            rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Entities#Group> ;
+            rdfs:comment "A part of an organization such as a school, business, or government that deals with a particular area of study or work" ;
+            rdfs:label "A part of an organization" .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint
+:EmbodiedCarbonFootprint rdf:type owl:Class ;
+                         rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact> ;
+                         rdfs:comment "Calculated value or index of greenhouse gases"@en ;
+                         rdfs:label "Carbon footprint"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#EnergySource
+:EnergySource rdf:type owl:Class ;
+              rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Energy#EnergyData> ;
+              rdfs:comment "Source for obtaining energy"@en ;
+              rdfs:label "Source of Energy"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor
+:FlowSensor rdf:type owl:Class ;
+            rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Entities#Sensor> ;
+            rdfs:comment "A sensor that measures the air entering a system"@en ;
+            rdfs:label "Flow sensor"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor
+:PressureSensor rdf:type owl:Class ;
+                rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Entities#Sensor> ;
+                rdfs:comment "A device that senses and measures pressure"@en ;
+                rdfs:label "Pressure sensor"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#Provider
+:Provider rdf:type owl:Class ;
+          rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson> ;
+          rdfs:comment "Provider or service or product"@en ;
+          rdfs:label "Provider"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#System
+:System rdf:type owl:Class ;
+        rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity> ;
+        rdfs:comment "Group of interacting or interrelated elements that act according to a set of rules to form a unified whole"@en ;
+        rdfs:label "System"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#Treatment
+:Treatment rdf:type owl:Class ;
+           rdfs:subClassOf :Waste ;
+           rdfs:comment "Treatment for waste"@en ;
+           rdfs:label "Treatment"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#Unit
+:Unit rdf:type owl:Class ;
+      rdfs:subClassOf :Department ;
+      rdfs:comment "Organizational or functional entity that occupies, uses or is responsible for one or more physical spaces within a project or facility"@en ;
+      rdfs:label "Unit"@en .
+
+
+###  https://kanzo.tech/ECiCo/BuildingOntology#Waste
+:Waste rdf:type owl:Class ;
+       rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Entities#Object> ;
+       rdfs:comment "Unwanted or unusable materials"@en ;
+       rdfs:label "Waste"@en .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson
+<https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Energy#EnergyData
+<https://w3id.org/digitalconstruction/0.5/Energy#EnergyData> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact
+<https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#Building
+<https://w3id.org/digitalconstruction/0.5/Entities#Building> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject
+<https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit
+<https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#Entity
+<https://w3id.org/digitalconstruction/0.5/Entities#Entity> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#Group
+<https://w3id.org/digitalconstruction/0.5/Entities#Group> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity
+<https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#Object
+<https://w3id.org/digitalconstruction/0.5/Entities#Object> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Entities#Sensor
+<https://w3id.org/digitalconstruction/0.5/Entities#Sensor> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Information#File
+<https://w3id.org/digitalconstruction/0.5/Information#File> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Information#InformationModel
+<https://w3id.org/digitalconstruction/0.5/Information#InformationModel> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage
+<https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

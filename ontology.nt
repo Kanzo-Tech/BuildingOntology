@@ -1,0 +1,235 @@
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#versionIRI> <https://kanzo.tech/ECiCo/BuildingOntology/0.1> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/digitalconstruction/0.5/Energy> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/digitalconstruction/0.5/Information> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/digitalconstruction/0.5/Lifecycle> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/digitalconstruction/0.5/Materials> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/digitalconstruction/0.5/Occupancy> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/digitalconstruction/0.5/Processes> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/digitalconstruction/0.5/Variables> .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology about building assets" .
+<https://kanzo.tech/ECiCo/BuildingOntology#> <http://www.w3.org/2000/01/rdf-schema#label> "An ontology for the digitalization of the building sector, ease of reuse, traceability, and recycling of materials." .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#establishesFile
+<https://kanzo.tech/ECiCo/BuildingOntology#establishesFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#establishesFile> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/digitalconstruction/0.5/Entities#Entity> .
+<https://kanzo.tech/ECiCo/BuildingOntology#establishesFile> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Information#File> .
+<https://kanzo.tech/ECiCo/BuildingOntology#establishesFile> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity can establish a certain file (e.g. a contract)"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#establishesFile> <http://www.w3.org/2000/01/rdf-schema#label> "establishes a file"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#foundIn
+<https://kanzo.tech/ECiCo/BuildingOntology#foundIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#foundIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject> .
+<https://kanzo.tech/ECiCo/BuildingOntology#foundIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage> .
+<https://kanzo.tech/ECiCo/BuildingOntology#foundIn> <http://www.w3.org/2000/01/rdf-schema#comment> "A building object that is found in certaing lifecycle stage"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#foundIn> <http://www.w3.org/2000/01/rdf-schema#label> "found in"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage
+<https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/digitalconstruction/0.5/Entities#Building> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage> <http://www.w3.org/2000/01/rdf-schema#range> <https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage> <http://www.w3.org/2000/01/rdf-schema#comment> "A building goes through an amount of stages during its lifecycle"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage> <http://www.w3.org/2000/01/rdf-schema#label> "has building stage"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#hasFile
+<https://kanzo.tech/ECiCo/BuildingOntology#hasFile> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasFile> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/digitalconstruction/0.5/Entities#Entity> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasFile> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Information#File> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasFile> <http://www.w3.org/2000/01/rdf-schema#comment> "Entity has specific file (once it has been established)"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasFile> <http://www.w3.org/2000/01/rdf-schema#label> "has file"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact
+<https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact> <http://www.w3.org/2000/01/rdf-schema#comment> "Has lifecycle impact associated"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact> <http://www.w3.org/2000/01/rdf-schema#label> "has lifecycle impact"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#hasSensor
+<https://kanzo.tech/ECiCo/BuildingOntology#hasSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasSensor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#System> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasSensor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Entities#Sensor> .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Has some sensor associated"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#hasSensor> <http://www.w3.org/2000/01/rdf-schema#label> "has sensor"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem
+<https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#System> .
+<https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem> <http://www.w3.org/2000/01/rdf-schema#range> <https://kanzo.tech/ECiCo/BuildingOntology#Contract> .
+<https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "File linked to specific system" .
+<https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem> <http://www.w3.org/2000/01/rdf-schema#label> "linked to system"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit
+<https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#Department> .
+<https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit> .
+<https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit> <http://www.w3.org/2000/01/rdf-schema#comment> "Department occupies a certain building unit"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit> <http://www.w3.org/2000/01/rdf-schema#label> "occupies building unit"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#presentInModel
+<https://kanzo.tech/ECiCo/BuildingOntology#presentInModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#presentInModel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#System> .
+<https://kanzo.tech/ECiCo/BuildingOntology#presentInModel> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Information#InformationModel> .
+<https://kanzo.tech/ECiCo/BuildingOntology#presentInModel> <http://www.w3.org/2000/01/rdf-schema#comment> "System is present in a model"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#presentInModel> <http://www.w3.org/2000/01/rdf-schema#label> "present in model"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy
+<https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#EnergySource> .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Energy#EnergyData> .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Produces energy data"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy> <http://www.w3.org/2000/01/rdf-schema#label> "produces energy"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#producesWaste
+<https://kanzo.tech/ECiCo/BuildingOntology#producesWaste> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesWaste> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage> .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesWaste> <http://www.w3.org/2000/01/rdf-schema#range> <https://kanzo.tech/ECiCo/BuildingOntology#Waste> .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesWaste> <http://www.w3.org/2000/01/rdf-schema#comment> "An activity produces waste"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#producesWaste> <http://www.w3.org/2000/01/rdf-schema#label> "produces waste"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment
+<https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#Waste> .
+<https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment> <http://www.w3.org/2000/01/rdf-schema#range> <https://kanzo.tech/ECiCo/BuildingOntology#Treatment> .
+<https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment> <http://www.w3.org/2000/01/rdf-schema#comment> "A waste requires a specific treatment"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment> <http://www.w3.org/2000/01/rdf-schema#label> "requires treatment"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy
+<https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://kanzo.tech/ECiCo/BuildingOntology#EnergySource> .
+<https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/digitalconstruction/0.5/Entities#Building> .
+<https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy> <http://www.w3.org/2000/01/rdf-schema#comment> "Produces and supplies energy to certain building"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy> <http://www.w3.org/2000/01/rdf-schema#label> "supplies energy"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage
+<https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Entities#Building> .
+<https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage> <http://www.w3.org/2000/01/rdf-schema#comment> "Stage at which a certain building is during the construction lifecycle"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage> <http://www.w3.org/2000/01/rdf-schema#label> "Building stage"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#Contract
+<https://kanzo.tech/ECiCo/BuildingOntology#Contract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Contract> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Information#File> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Contract> <http://www.w3.org/2000/01/rdf-schema#comment> "A contract"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#Contract> <http://www.w3.org/2000/01/rdf-schema#label> "Contract"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#Department
+<https://kanzo.tech/ECiCo/BuildingOntology#Department> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Department> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Entities#Group> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Department> <http://www.w3.org/2000/01/rdf-schema#comment> "A part of an organization such as a school, business, or government that deals with a particular area of study or work" .
+<https://kanzo.tech/ECiCo/BuildingOntology#Department> <http://www.w3.org/2000/01/rdf-schema#label> "A part of an organization" .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint
+<https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact> .
+<https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint> <http://www.w3.org/2000/01/rdf-schema#comment> "Calculated value or index of greenhouse gases"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint> <http://www.w3.org/2000/01/rdf-schema#label> "Carbon footprint"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#EnergySource
+<https://kanzo.tech/ECiCo/BuildingOntology#EnergySource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#EnergySource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Energy#EnergyData> .
+<https://kanzo.tech/ECiCo/BuildingOntology#EnergySource> <http://www.w3.org/2000/01/rdf-schema#comment> "Source for obtaining energy"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#EnergySource> <http://www.w3.org/2000/01/rdf-schema#label> "Source of Energy"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor
+<https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Entities#Sensor> .
+<https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A sensor that measures the air entering a system"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Flow sensor"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor
+<https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Entities#Sensor> .
+<https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "A device that senses and measures pressure"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Pressure sensor"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#Provider
+<https://kanzo.tech/ECiCo/BuildingOntology#Provider> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Provider> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Provider> <http://www.w3.org/2000/01/rdf-schema#comment> "Provider or service or product"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#Provider> <http://www.w3.org/2000/01/rdf-schema#label> "Provider"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#System
+<https://kanzo.tech/ECiCo/BuildingOntology#System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#System> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity> .
+<https://kanzo.tech/ECiCo/BuildingOntology#System> <http://www.w3.org/2000/01/rdf-schema#comment> "Group of interacting or interrelated elements that act according to a set of rules to form a unified whole"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#System> <http://www.w3.org/2000/01/rdf-schema#label> "System"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#Treatment
+<https://kanzo.tech/ECiCo/BuildingOntology#Treatment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Treatment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://kanzo.tech/ECiCo/BuildingOntology#Waste> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Treatment> <http://www.w3.org/2000/01/rdf-schema#comment> "Treatment for waste"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#Treatment> <http://www.w3.org/2000/01/rdf-schema#label> "Treatment"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#Unit
+<https://kanzo.tech/ECiCo/BuildingOntology#Unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Unit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://kanzo.tech/ECiCo/BuildingOntology#Department> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Unit> <http://www.w3.org/2000/01/rdf-schema#comment> "Organizational or functional entity that occupies, uses or is responsible for one or more physical spaces within a project or facility"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#Unit> <http://www.w3.org/2000/01/rdf-schema#label> "Unit"@en .
+# 
+# https://kanzo.tech/ECiCo/BuildingOntology#Waste
+<https://kanzo.tech/ECiCo/BuildingOntology#Waste> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Waste> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/digitalconstruction/0.5/Entities#Object> .
+<https://kanzo.tech/ECiCo/BuildingOntology#Waste> <http://www.w3.org/2000/01/rdf-schema#comment> "Unwanted or unusable materials"@en .
+<https://kanzo.tech/ECiCo/BuildingOntology#Waste> <http://www.w3.org/2000/01/rdf-schema#label> "Waste"@en .
+# 
+# https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson
+<https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Energy#EnergyData
+<https://w3id.org/digitalconstruction/0.5/Energy#EnergyData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact
+<https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#Building
+<https://w3id.org/digitalconstruction/0.5/Entities#Building> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject
+<https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit
+<https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#Entity
+<https://w3id.org/digitalconstruction/0.5/Entities#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#Group
+<https://w3id.org/digitalconstruction/0.5/Entities#Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity
+<https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#Object
+<https://w3id.org/digitalconstruction/0.5/Entities#Object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Entities#Sensor
+<https://w3id.org/digitalconstruction/0.5/Entities#Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Information#File
+<https://w3id.org/digitalconstruction/0.5/Information#File> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Information#InformationModel
+<https://w3id.org/digitalconstruction/0.5/Information#InformationModel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage
+<https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

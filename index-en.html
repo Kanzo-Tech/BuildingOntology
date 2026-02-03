@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>ECiCo Ontology - A building Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://kanzo.tech/ECiCo/BuildingOntology","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://kanzo.tech/ECiCo/BuildingOntology","name":"ECiCo Ontology - A building Ontology", "headline":"The construction sector faces critical challenges in efficiency, sustainability, and resource management, being one of the sectors with the greatest environmental impact. To address this, the ECiCo project aims to drive the sector's transition towards a Circular Economy (CE) model through a technological solution that integrates efficient data sharing and promotes construction sustainability. The ECiCo ontology network will formalize, structure, integrate, and model knowledge in construction, establishing a common semantic language to tackle interoperability, improve decision-making regarding sustainability, resource efficiency, waste reduction, and project lifecycle optimization. This network will also serve as a lingua franca, enabling stakeholders in a data space to share reusable resources. The ontology's domain is the construction sector with a focus on Circular Economy, encompassing resource management, sustainability, material traceability, carbon footprint, data interoperability, Digital Twins, BIM models, and waste management. OWL has been chosen as the implementation language due to its W3C recommendation and widespread acceptance in the linked data web community.", "dateReleased":"Tue Feb 03 09:19:57 CET 2026", "license":"null"}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>ECiCo Ontology - A building Ontology</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://kanzo.tech/ECiCo/BuildingOntology/0.1">https://kanzo.tech/ECiCo/BuildingOntology/0.1</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="https://kanzo.tech/ECiCo/BuildingOntology">https://kanzo.tech/ECiCo/BuildingOntology</a></dd>
+<dt>Issued on:</dt>
+<dd>Date issued</dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="https://w3id.org/digitalconstruction/0.5/Contexts#">Contexts</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Variables#">Variables</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Entities#">Entities</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Processes#">Processes</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Agents#">Agents</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Information#">Information</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Materials#">Materials</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Occupancy#">Occupancy</a></dd><dd><a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#">Lifecycle</a></dd><dd>Energy</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="null" target="_blank"><img src="https://img.shields.io/badge/License-null-blue.svg" alt="null" /></a>
+<a href="null" rel="license" target="_blank">
+<img src="null" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Retrieved from: https://kanzo.tech/ECiCo/BuildingOntology/0.1</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The construction sector faces critical challenges in efficiency, sustainability, and resource management, being one of the sectors with the greatest environmental impact. To address this, the ECiCo project aims to drive the sector's transition towards a Circular Economy (CE) model through a technological solution that integrates efficient data sharing and promotes construction sustainability. The ECiCo ontology network will formalize, structure, integrate, and model knowledge in construction, establishing a common semantic language to tackle interoperability, improve decision-making regarding sustainability, resource efficiency, waste reduction, and project lifecycle optimization. This network will also serve as a lingua franca, enabling stakeholders in a data space to share reusable resources. The ontology's domain is the construction sector with a focus on Circular Economy, encompassing resource management, sustainability, material traceability, carbon footprint, data interoperability, Digital Twins, BIM models, and waste management. OWL has been chosen as the implementation language due to its W3C recommendation and widespread acceptance in the linked data web community.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">The construction sector stands at a critical juncture, confronting significant challenges in efficiency, sustainability, and resource management, positioning it as one of the primary contributors to environmental impact. In this pressing context, the ECiCo initiative emerges with the fundamental purpose of catalyzing the sector's transformation towards a Circular Economy model. This will be achieved through the development of an advanced technological solution that will not only facilitate efficient data sharing but also actively promote more sustainable practices across the entire construction value chain, laying the groundwork for a more resilient and responsible industry.</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">ECiCo Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Department"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#Department">A part of an organization</a>
+   </li>
+   <li>
+      <a href="#BuildingStage"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage">Building stage</a>
+   </li>
+   <li>
+      <a href="#EmbodiedCarbonFootprint"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint">Carbon footprint</a>
+   </li>
+   <li>
+      <a href="#Contract"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#Contract">Contract</a>
+   </li>
+   <li>
+      <a href="#FlowSensor"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor">Flow sensor</a>
+   </li>
+   <li>
+      <a href="#PressureSensor"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor">Pressure sensor</a>
+   </li>
+   <li>
+      <a href="#Provider"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#Provider">Provider</a>
+   </li>
+   <li>
+      <a href="#EnergySource"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#EnergySource">Source of Energy</a>
+   </li>
+   <li>
+      <a href="#System" title="https://kanzo.tech/ECiCo/BuildingOntology#System">System</a>
+   </li>
+   <li>
+      <a href="#Treatment"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#Treatment">Treatment</a>
+   </li>
+   <li>
+      <a href="#Unit" title="https://kanzo.tech/ECiCo/BuildingOntology#Unit">Unit</a>
+   </li>
+   <li>
+      <a href="#Waste" title="https://kanzo.tech/ECiCo/BuildingOntology#Waste">Waste</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#establishesFile"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#establishesFile">establishes a file</a>
+   </li>
+   <li>
+      <a href="#foundIn" title="https://kanzo.tech/ECiCo/BuildingOntology#foundIn">found in</a>
+   </li>
+   <li>
+      <a href="#hasBuildingStage"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage">has building stage</a>
+   </li>
+   <li>
+      <a href="#hasFile" title="https://kanzo.tech/ECiCo/BuildingOntology#hasFile">has file</a>
+   </li>
+   <li>
+      <a href="#hasLifecycleImpact"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact">has lifecycle impact</a>
+   </li>
+   <li>
+      <a href="#hasSensor"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#hasSensor">has sensor</a>
+   </li>
+   <li>
+      <a href="#linkedToSystem"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem">linked to system</a>
+   </li>
+   <li>
+      <a href="#occupiesBuildingUnit"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit">occupies building unit</a>
+   </li>
+   <li>
+      <a href="#presentInModel"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#presentInModel">present in model</a>
+   </li>
+   <li>
+      <a href="#producesEnergy"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy">produces energy</a>
+   </li>
+   <li>
+      <a href="#producesWaste"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#producesWaste">produces waste</a>
+   </li>
+   <li>
+      <a href="#requiresTreatment"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment">requires treatment</a>
+   </li>
+   <li>
+      <a href="#suppliesEnergy"
+         title="https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy">supplies energy</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">ECiCo Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">The ECiCo ontology network is designed with the primary objective of comprehensively formalizing, structuring, integrating, and modeling knowledge inherent to the construction domain, with a particular focus on Circular Economy principles. Its development addresses the urgent need to establish a unified semantic language, essential for overcoming interoperability challenges and improving decision-making in crucial aspects such as sustainability, resource efficiency, waste minimization, and comprehensive project lifecycle optimization. This network will act as a conceptual lingua franca, enabling the various stakeholders involved in the construction data ecosystem to effectively share and reuse resources, covering key areas like resource management, material traceability, carbon footprint, data interoperability, Digital Twins, BIM models, and waste management. It will be implemented in OWL, a recognized W3C standard.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for ECiCo Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by ECiCo Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Department" title="https://kanzo.tech/ECiCo/BuildingOntology#Department">A part of an organization</a></li>
+  <li><a href="#BuildingStage" title="https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage">Building stage</a></li>
+  <li><a href="#EmbodiedCarbonFootprint" title="https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint">Carbon footprint</a></li>
+  <li><a href="#Contract" title="https://kanzo.tech/ECiCo/BuildingOntology#Contract">Contract</a></li>
+  <li><a href="#FlowSensor" title="https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor">Flow sensor</a></li>
+  <li><a href="#PressureSensor" title="https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor">Pressure sensor</a></li>
+  <li><a href="#Provider" title="https://kanzo.tech/ECiCo/BuildingOntology#Provider">Provider</a></li>
+  <li><a href="#EnergySource" title="https://kanzo.tech/ECiCo/BuildingOntology#EnergySource">Source of Energy</a></li>
+  <li><a href="#System" title="https://kanzo.tech/ECiCo/BuildingOntology#System">System</a></li>
+  <li><a href="#Treatment" title="https://kanzo.tech/ECiCo/BuildingOntology#Treatment">Treatment</a></li>
+  <li><a href="#Unit" title="https://kanzo.tech/ECiCo/BuildingOntology#Unit">Unit</a></li>
+  <li><a href="#Waste" title="https://kanzo.tech/ECiCo/BuildingOntology#Waste">Waste</a></li>
+ </ul>
+ <div class="entity" id="Department">
+  <h3>A part of an organization<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#Department</p>
+  <div class="comment">
+   <span class="markdown">A part of an organization such as a school, business, or government that deals with a particular area of study or work</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Entities#Group" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Group">Group</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Unit" title="https://kanzo.tech/ECiCo/BuildingOntology#Unit">Unit</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#occupiesBuildingUnit" title="https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit">occupies building unit</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BuildingStage">
+  <h3>Building stage<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage</p>
+  <div class="comment">
+   <span class="markdown">Stage at which a certain building is during the construction lifecycle</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Entities#Building" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Building">Building</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasLifecycleImpact" title="https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact">has lifecycle impact</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasBuildingStage" title="https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage">has building stage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EmbodiedCarbonFootprint">
+  <h3>Carbon footprint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint</p>
+  <div class="comment">
+   <span class="markdown">Calculated value or index of greenhouse gases</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact">Life Cycle Impact</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Contract">
+  <h3>Contract<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#Contract</p>
+  <div class="comment">
+   <span class="markdown">A contract</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Information#File" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Information#File">File</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#linkedToSystem" title="https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem">linked to system</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FlowSensor">
+  <h3>Flow sensor<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor</p>
+  <div class="comment">
+   <span class="markdown">A sensor that measures the air entering a system</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Entities#Sensor" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Sensor">Sensor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PressureSensor">
+  <h3>Pressure sensor<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor</p>
+  <div class="comment">
+   <span class="markdown">A device that senses and measures pressure</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Entities#Sensor" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Sensor">Sensor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Provider">
+  <h3>Provider<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#Provider</p>
+  <div class="comment">
+   <span class="markdown">Provider or service or product</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson">Legal Person</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EnergySource">
+  <h3>Source of Energy<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#EnergySource</p>
+  <div class="comment">
+   <span class="markdown">Source for obtaining energy</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Energy#EnergyData" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Energy#EnergyData">Energy Data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#producesEnergy" title="https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy">produces energy</a> <sup class="type-op" title="object property">op</sup>, <a href="#suppliesEnergy" title="https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy">supplies energy</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="System">
+  <h3>System<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#System</p>
+  <div class="comment">
+   <span class="markdown">Group of interacting or interrelated elements that act according to a set of rules to form a unified whole</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity">Immaterial Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasSensor" title="https://kanzo.tech/ECiCo/BuildingOntology#hasSensor">has sensor</a> <sup class="type-op" title="object property">op</sup>, <a href="#linkedToSystem" title="https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem">linked to system</a> <sup class="type-op" title="object property">op</sup>, <a href="#presentInModel" title="https://kanzo.tech/ECiCo/BuildingOntology#presentInModel">present in model</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Treatment">
+  <h3>Treatment<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#Treatment</p>
+  <div class="comment">
+   <span class="markdown">Treatment for waste</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Waste" title="https://kanzo.tech/ECiCo/BuildingOntology#Waste">Waste</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#requiresTreatment" title="https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment">requires treatment</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Unit">
+  <h3>Unit<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#Unit</p>
+  <div class="comment">
+   <span class="markdown">Organizational or functional entity that occupies, uses or is responsible for one or more physical spaces within a project or facility</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Department" title="https://kanzo.tech/ECiCo/BuildingOntology#Department">A part of an organization</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Waste">
+  <h3>Waste<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#Waste</p>
+  <div class="comment">
+   <span class="markdown">Unwanted or unusable materials</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="https://w3id.org/digitalconstruction/0.5/Entities#Object" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Object">Object</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Treatment" title="https://kanzo.tech/ECiCo/BuildingOntology#Treatment">Treatment</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#requiresTreatment" title="https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment">requires treatment</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#producesWaste" title="https://kanzo.tech/ECiCo/BuildingOntology#producesWaste">produces waste</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#establishesFile" title="https://kanzo.tech/ECiCo/BuildingOntology#establishesFile">establishes a file</a></li>
+  <li><a href="#foundIn" title="https://kanzo.tech/ECiCo/BuildingOntology#foundIn">found in</a></li>
+  <li><a href="#hasBuildingStage" title="https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage">has building stage</a></li>
+  <li><a href="#hasFile" title="https://kanzo.tech/ECiCo/BuildingOntology#hasFile">has file</a></li>
+  <li><a href="#hasLifecycleImpact" title="https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact">has lifecycle impact</a></li>
+  <li><a href="#hasSensor" title="https://kanzo.tech/ECiCo/BuildingOntology#hasSensor">has sensor</a></li>
+  <li><a href="#linkedToSystem" title="https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem">linked to system</a></li>
+  <li><a href="#occupiesBuildingUnit" title="https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit">occupies building unit</a></li>
+  <li><a href="#presentInModel" title="https://kanzo.tech/ECiCo/BuildingOntology#presentInModel">present in model</a></li>
+  <li><a href="#producesEnergy" title="https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy">produces energy</a></li>
+  <li><a href="#producesWaste" title="https://kanzo.tech/ECiCo/BuildingOntology#producesWaste">produces waste</a></li>
+  <li><a href="#requiresTreatment" title="https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment">requires treatment</a></li>
+  <li><a href="#suppliesEnergy" title="https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy">supplies energy</a></li>
+ </ul>
+ <div class="entity" id="establishesFile">
+  <h3>establishes a file<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#establishesFile</p>
+  <div class="comment">
+   <span class="markdown">An entity can establish a certain file (e.g. a contract)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Entities#Entity" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Information#File" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Information#File">File</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="foundIn">
+  <h3>found in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#foundIn</p>
+  <div class="comment">
+   <span class="markdown">A building object that is found in certaing lifecycle stage</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject">Building Object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage">Building Lifecycle Stage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasBuildingStage">
+  <h3>has building stage<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage</p>
+  <div class="comment">
+   <span class="markdown">A building goes through an amount of stages during its lifecycle</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Entities#Building" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Building">Building</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#BuildingStage" title="https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage">Building stage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasFile">
+  <h3>has file<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#hasFile</p>
+  <div class="comment">
+   <span class="markdown">Entity has specific file (once it has been established)</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Entities#Entity" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Information#File" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Information#File">File</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasLifecycleImpact">
+  <h3>has lifecycle impact<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact</p>
+  <div class="comment">
+   <span class="markdown">Has lifecycle impact associated</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#BuildingStage" title="https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage">Building stage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact">Life Cycle Impact</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSensor">
+  <h3>has sensor<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#hasSensor</p>
+  <div class="comment">
+   <span class="markdown">Has some sensor associated</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#System" title="https://kanzo.tech/ECiCo/BuildingOntology#System">System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Entities#Sensor" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Sensor">Sensor</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="linkedToSystem">
+  <h3>linked to system<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem</p>
+  <div class="comment">
+   <span class="markdown">File linked to specific system</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#System" title="https://kanzo.tech/ECiCo/BuildingOntology#System">System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Contract" title="https://kanzo.tech/ECiCo/BuildingOntology#Contract">Contract</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="occupiesBuildingUnit">
+  <h3>occupies building unit<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit</p>
+  <div class="comment">
+   <span class="markdown">Department occupies a certain building unit</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Department" title="https://kanzo.tech/ECiCo/BuildingOntology#Department">A part of an organization</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit">Building Unit</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="presentInModel">
+  <h3>present in model<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#presentInModel</p>
+  <div class="comment">
+   <span class="markdown">System is present in a model</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#System" title="https://kanzo.tech/ECiCo/BuildingOntology#System">System</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Information#InformationModel" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Information#InformationModel">Information Model</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="producesEnergy">
+  <h3>produces energy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy</p>
+  <div class="comment">
+   <span class="markdown">Produces energy data</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#EnergySource" title="https://kanzo.tech/ECiCo/BuildingOntology#EnergySource">Source of Energy</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Energy#EnergyData" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Energy#EnergyData">Energy Data</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="producesWaste">
+  <h3>produces waste<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#producesWaste</p>
+  <div class="comment">
+   <span class="markdown">An activity produces waste</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage">Building Lifecycle Stage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Waste" title="https://kanzo.tech/ECiCo/BuildingOntology#Waste">Waste</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="requiresTreatment">
+  <h3>requires treatment<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment</p>
+  <div class="comment">
+   <span class="markdown">A waste requires a specific treatment</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Waste" title="https://kanzo.tech/ECiCo/BuildingOntology#Waste">Waste</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Treatment" title="https://kanzo.tech/ECiCo/BuildingOntology#Treatment">Treatment</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="suppliesEnergy">
+  <h3>supplies energy<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy</p>
+  <div class="comment">
+   <span class="markdown">Produces and supplies energy to certain building</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#EnergySource" title="https://kanzo.tech/ECiCo/BuildingOntology#EnergySource">Source of Energy</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="https://w3id.org/digitalconstruction/0.5/Entities#Building" target="_blank" title="https://w3id.org/digitalconstruction/0.5/Entities#Building">Building</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

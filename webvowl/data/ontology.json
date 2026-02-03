@@ -1,0 +1,707 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "https://w3id.org/digitalconstruction/0.5/Agents", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/digitalconstruction/0.5/Information", "https://kanzo.tech/ECiCo/BuildingOntology", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/digitalconstruction/0.5/Energy", "https://w3id.org/digitalconstruction/0.5/Entities", "https://w3id.org/digitalconstruction/0.5/Lifecycle" ],
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#",
+    "labels" : {
+      "undefined" : "An ontology for the digitalization of the building sector, ease of reuse, traceability, and recycling of materials."
+    },
+    "comments" : {
+      "undefined" : "An ontology about building assets"
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "46",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#Treatment",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Treatment",
+      "en" : "Treatment"
+    },
+    "comment" : {
+      "en" : "Treatment for waste"
+    },
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Agents#LegalPerson",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Agents",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LegalPerson"
+    },
+    "subClasses" : [ "3" ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#Contract",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Contract",
+      "en" : "Contract"
+    },
+    "comment" : {
+      "en" : "A contract"
+    },
+    "id" : "4",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#FlowSensor",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FlowSensor",
+      "en" : "Flow sensor"
+    },
+    "comment" : {
+      "en" : "A sensor that measures the air entering a system"
+    },
+    "id" : "6",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#Sensor",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Sensor"
+    },
+    "subClasses" : [ "8", "6" ],
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#PressureSensor",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PressureSensor",
+      "en" : "Pressure sensor"
+    },
+    "comment" : {
+      "en" : "A device that senses and measures pressure"
+    },
+    "id" : "8",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#Object",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Object"
+    },
+    "subClasses" : [ "1" ],
+    "attributes" : [ "external" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#Entity",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Entity"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Energy#LifeCycleImpact",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Energy",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LifeCycleImpact"
+    },
+    "subClasses" : [ "17" ],
+    "attributes" : [ "external" ],
+    "id" : "16"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Energy#EnergyData",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Energy",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnergyData"
+    },
+    "subClasses" : [ "23" ],
+    "attributes" : [ "external" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#System",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "System",
+      "en" : "System"
+    },
+    "comment" : {
+      "en" : "Group of interacting or interrelated elements that act according to a set of rules to form a unified whole"
+    },
+    "id" : "10",
+    "superClasses" : [ "24" ]
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#ImmaterialEntity",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ImmaterialEntity"
+    },
+    "subClasses" : [ "10" ],
+    "attributes" : [ "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#Unit",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Unit",
+      "en" : "Unit"
+    },
+    "comment" : {
+      "en" : "Organizational or functional entity that occupies, uses or is responsible for one or more physical spaces within a project or facility"
+    },
+    "id" : "26",
+    "superClasses" : [ "12" ]
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#BuildingStage",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BuildingStage",
+      "en" : "Building stage"
+    },
+    "comment" : {
+      "en" : "Stage at which a certain building is during the construction lifecycle"
+    },
+    "id" : "27",
+    "superClasses" : [ "28" ]
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#BuildingUnit",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BuildingUnit"
+    },
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#BuildingObject",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BuildingObject"
+    },
+    "attributes" : [ "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#Department",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Department",
+      "undefined" : "A part of an organization"
+    },
+    "subClasses" : [ "26" ],
+    "comment" : {
+      "undefined" : "A part of an organization such as a school, business, or government that deals with a particular area of study or work"
+    },
+    "id" : "12",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#EmbodiedCarbonFootprint",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EmbodiedCarbonFootprint",
+      "en" : "Carbon footprint"
+    },
+    "comment" : {
+      "en" : "Calculated value or index of greenhouse gases"
+    },
+    "id" : "17",
+    "superClasses" : [ "16" ]
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#EnergySource",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnergySource",
+      "en" : "Source of Energy"
+    },
+    "comment" : {
+      "en" : "Source for obtaining energy"
+    },
+    "id" : "23",
+    "superClasses" : [ "22" ]
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#Waste",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Waste",
+      "en" : "Waste"
+    },
+    "subClasses" : [ "0" ],
+    "comment" : {
+      "en" : "Unwanted or unusable materials"
+    },
+    "id" : "1",
+    "superClasses" : [ "14" ]
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Lifecycle#BuildingLifecycleStage",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Lifecycle",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BuildingLifecycleStage"
+    },
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Information#InformationModel",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Information",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InformationModel"
+    },
+    "attributes" : [ "external" ],
+    "id" : "46"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#Group",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Group"
+    },
+    "subClasses" : [ "12" ],
+    "attributes" : [ "external" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Entities#Building",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Entities",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Building"
+    },
+    "subClasses" : [ "27" ],
+    "attributes" : [ "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/digitalconstruction/0.5/Information#File",
+    "baseIri" : "https://w3id.org/digitalconstruction/0.5/Information",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "File"
+    },
+    "subClasses" : [ "4" ],
+    "attributes" : [ "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#Provider",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Provider",
+      "en" : "Provider"
+    },
+    "comment" : {
+      "en" : "Provider or service or product"
+    },
+    "id" : "3",
+    "superClasses" : [ "2" ]
+  } ],
+  "property" : [ {
+    "id" : "9",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "36",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "45",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "49",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#linkedToSystem",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "linkedToSystem",
+      "en" : "linked to system"
+    },
+    "domain" : "10",
+    "comment" : {
+      "undefined" : "File linked to specific system"
+    },
+    "attributes" : [ "object" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#occupiesBuildingUnit",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "occupiesBuildingUnit",
+      "en" : "occupies building unit"
+    },
+    "domain" : "12",
+    "comment" : {
+      "en" : "Department occupies a certain building unit"
+    },
+    "attributes" : [ "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#hasFile",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasFile",
+      "en" : "has file"
+    },
+    "domain" : "15",
+    "comment" : {
+      "en" : "Entity has specific file (once it has been established)"
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#producesWaste",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "producesWaste",
+      "en" : "produces waste"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "An activity produces waste"
+    },
+    "attributes" : [ "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#establishesFile",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "establishesFile",
+      "en" : "establishes a file"
+    },
+    "domain" : "15",
+    "comment" : {
+      "en" : "An entity can establish a certain file (e.g. a contract)"
+    },
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#hasSensor",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasSensor",
+      "en" : "has sensor"
+    },
+    "domain" : "10",
+    "comment" : {
+      "en" : "Has some sensor associated"
+    },
+    "attributes" : [ "object" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#suppliesEnergy",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "suppliesEnergy",
+      "en" : "supplies energy"
+    },
+    "domain" : "23",
+    "comment" : {
+      "en" : "Produces and supplies energy to certain building"
+    },
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "range" : "5",
+    "domain" : "4",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "32"
+  }, {
+    "range" : "12",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  }, {
+    "range" : "7",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "34"
+  }, {
+    "range" : "14",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "35"
+  }, {
+    "range" : "16",
+    "domain" : "17",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "36"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "37"
+  }, {
+    "range" : "22",
+    "domain" : "23",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "38"
+  }, {
+    "range" : "31",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "39"
+  }, {
+    "range" : "28",
+    "domain" : "27",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "40"
+  }, {
+    "range" : "24",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "41"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#producesEnergy",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "22",
+    "label" : {
+      "IRI-based" : "producesEnergy",
+      "en" : "produces energy"
+    },
+    "domain" : "23",
+    "comment" : {
+      "en" : "Produces energy data"
+    },
+    "attributes" : [ "object" ],
+    "id" : "42"
+  }, {
+    "range" : "2",
+    "domain" : "3",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "43"
+  }, {
+    "range" : "7",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#presentInModel",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "presentInModel",
+      "en" : "present in model"
+    },
+    "domain" : "10",
+    "comment" : {
+      "en" : "System is present in a model"
+    },
+    "attributes" : [ "object" ],
+    "id" : "45"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#hasLifecycleImpact",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasLifecycleImpact",
+      "en" : "has lifecycle impact"
+    },
+    "domain" : "27",
+    "comment" : {
+      "en" : "Has lifecycle impact associated"
+    },
+    "attributes" : [ "object" ],
+    "id" : "47"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#hasBuildingStage",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "hasBuildingStage",
+      "en" : "has building stage"
+    },
+    "domain" : "28",
+    "comment" : {
+      "en" : "A building goes through an amount of stages during its lifecycle"
+    },
+    "attributes" : [ "object" ],
+    "id" : "48"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#foundIn",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "foundIn",
+      "en" : "found in"
+    },
+    "domain" : "30",
+    "comment" : {
+      "en" : "A building object that is found in certaing lifecycle stage"
+    },
+    "attributes" : [ "object" ],
+    "id" : "49"
+  }, {
+    "iri" : "https://kanzo.tech/ECiCo/BuildingOntology#requiresTreatment",
+    "baseIri" : "https://kanzo.tech/ECiCo/BuildingOntology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "requiresTreatment",
+      "en" : "requires treatment"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "A waste requires a specific treatment"
+    },
+    "attributes" : [ "object" ],
+    "id" : "50"
+  } ]
+}
