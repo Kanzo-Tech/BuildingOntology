@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Contexts" uri="https://w3id.org/digitalconstruction/0.5/Contexts#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Variables" uri="https://w3id.org/digitalconstruction/0.5/Variables#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Entities" uri="https://w3id.org/digitalconstruction/0.5/Entities#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Processes" uri="https://w3id.org/digitalconstruction/0.5/Processes#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Agents" uri="https://w3id.org/digitalconstruction/0.5/Agents#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Information" uri="https://w3id.org/digitalconstruction/0.5/Information#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Materials" uri="https://w3id.org/digitalconstruction/0.5/Materials#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Occupancy" uri="https://w3id.org/digitalconstruction/0.5/Occupancy#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Lifecycle" uri="https://w3id.org/digitalconstruction/0.5/Lifecycle#"/>
-    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Energy" uri="https://w3id.org/digitalconstruction/0.5/Energy#"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Contexts" uri="https://digitalconstruction.github.io/Contexts/v/0.5/contexts.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Variables" uri="https://digitalconstruction.github.io/Variables/v/0.5/variables.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Entities" uri="https://digitalconstruction.github.io/Entities/v/0.5/entities.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Processes" uri="https://digitalconstruction.github.io/Processes/v/0.5/processes.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Agents" uri="https://digitalconstruction.github.io/Agents/v/0.5/agents.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Information" uri="https://digitalconstruction.github.io/Information/v/0.5/information.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Materials" uri="https://digitalconstruction.github.io/Materials/v/0.5/materials.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Occupancy" uri="https://digitalconstruction.github.io/Occupancy/v/0.5/occupancy.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Lifecycle" uri="https://digitalconstruction.github.io/Lifecycle/v/0.5/lifecycle.ttl"/>
+    <uri id="Imports Wizard Entry" name="https://w3id.org/digitalconstruction/0.5/Energy" uri="https://digitalconstruction.github.io/Energy/v/0.5/energy.ttl"/>
 </catalog>
